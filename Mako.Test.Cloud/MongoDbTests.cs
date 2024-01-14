@@ -22,7 +22,7 @@ public class MongoDbTests
     [SetUp]
     public void Setup()
     {
-        _db = new MongoDb<GameResult>("mongodb+srv://matt:mAuGe6CGNBNjZPXb@gamecloset1.3cjtvrf.mongodb.net/?retryWrites=true&w=majority", "game_data", "finished_results");
+        _db = new MongoDb<GameResult>("mongodb+srv://matt:<password>@gamecloset1.3cjtvrf.mongodb.net/?retryWrites=true&w=majority", "game_data", "finished_results");
     }
 
     [Test]
