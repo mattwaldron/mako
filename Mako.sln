@@ -7,6 +7,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mako.Ui", "Mako.Ui\Mako.Ui.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mako.Testbench", "Mako.Testbench\Mako.Testbench.csproj", "{3C1DC542-14DF-4187-B813-087190C4BACB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mako.Cloud", "Mako.Cloud\Mako.Cloud.csproj", "{1068A874-4F53-4B89-8CB7-14B575901F1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4AB9ABD2-19C2-42DB-AADA-7861E90D2100}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mako.Test.Cloud", "Mako.Test.Cloud\Mako.Test.Cloud.csproj", "{E3B0884A-4D76-4F34-8EF2-B895E6588EE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mako.Common", "Mako.Common\Mako.Common.csproj", "{FDC5E6CD-78B5-4F97-8F66-322CBE0D1E67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mako.Test.Common", "Mako.Test.Common\Mako.Test.Common.csproj", "{DA02084C-D408-4AD9-ADF9-0A95A8775774}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,9 +33,29 @@ Global
 		{3C1DC542-14DF-4187-B813-087190C4BACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C1DC542-14DF-4187-B813-087190C4BACB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3C1DC542-14DF-4187-B813-087190C4BACB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1068A874-4F53-4B89-8CB7-14B575901F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1068A874-4F53-4B89-8CB7-14B575901F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1068A874-4F53-4B89-8CB7-14B575901F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1068A874-4F53-4B89-8CB7-14B575901F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3B0884A-4D76-4F34-8EF2-B895E6588EE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3B0884A-4D76-4F34-8EF2-B895E6588EE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3B0884A-4D76-4F34-8EF2-B895E6588EE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3B0884A-4D76-4F34-8EF2-B895E6588EE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC5E6CD-78B5-4F97-8F66-322CBE0D1E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC5E6CD-78B5-4F97-8F66-322CBE0D1E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC5E6CD-78B5-4F97-8F66-322CBE0D1E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC5E6CD-78B5-4F97-8F66-322CBE0D1E67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA02084C-D408-4AD9-ADF9-0A95A8775774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA02084C-D408-4AD9-ADF9-0A95A8775774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA02084C-D408-4AD9-ADF9-0A95A8775774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA02084C-D408-4AD9-ADF9-0A95A8775774}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E3B0884A-4D76-4F34-8EF2-B895E6588EE5} = {4AB9ABD2-19C2-42DB-AADA-7861E90D2100}
+		{DA02084C-D408-4AD9-ADF9-0A95A8775774} = {4AB9ABD2-19C2-42DB-AADA-7861E90D2100}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {44A0628A-6FB4-4F3C-A985-8833F5189823}
