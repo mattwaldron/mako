@@ -50,7 +50,7 @@ public class MongoDbTests
         Console.WriteLine($"{results.Count} entries in collection");
         foreach (var r in results)
         {
-            Console.WriteLine(r.ToJson());
+            Console.WriteLine(r.ToString());
         }
     }
 

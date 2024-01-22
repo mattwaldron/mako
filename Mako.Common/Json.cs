@@ -18,16 +18,26 @@ public static class Json
 
     public static void ToJsonFile<T>(this T obj, string file)
     {
-        File.WriteAllText(file, obj.ToJson());
+        File.WriteAllText(file, obj.ToString());
     }
 
-    public static T? FromJson<T>(string json)
+    public static string ToString<T>(T obj)
+    {
+        return obj.ToJson();
+    }
+
+    public static void ToFile<T>(T obj, string file)
+    {
+        obj.ToJsonFile(file);
+    }
+
+    public static T? FromString<T>(string json)
     {
         return JsonSerializer.Deserialize<T>(json, opts);
     }
 
     public static T? FromFile<T>(string file)
     {
-        return Json.FromJson<T>(File.ReadAllText(file));
+        return Json.FromString<T>(File.ReadAllText(file));
     }
 }
