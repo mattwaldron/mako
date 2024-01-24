@@ -31,18 +31,4 @@ internal class GoogleGeocodeTests
         var offset = await ggc.CoordinatesToTimeOffset(38.5815719, -121.4943996);
         Assert.That(offset == -28800 || offset == -25200);
     }
-
-    [Test]
-    public void TimeZone()
-    {
-        var tzi = TimeZoneInfo.FindSystemTimeZoneById("America/Los_Angeles");
-        var now = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, tzi);
-        foreach(var adj in tzi.GetAdjustmentRules())
-        {
-            if (adj.DateStart < now && now < adj.DateEnd)
-            {
-            }
-        }
-    }
-
 }
