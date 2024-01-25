@@ -60,6 +60,26 @@ public class GoogleGeocode
         }
         return parsed.rawOffset + parsed.dstOffset;
     }
+
+    public async Task<string> CoordinatesToTimeZoneName(double latitude, double longitude)
+    {
+        var uri = new UriBuilder("https://maps.googleapis.com/maps/api/timezone/json");
+        var query = HttpUtility.ParseQueryString(string.Empty);
+        query["key"] = _apiKey;
+        query["location"] = $"{latitude},{longitude}";
+        query["timestamp"] = $"{DateTimeOffset.Now.ToUnixTimeSeconds()}";
+        uri.Query = query.ToString();
+        using var client = new HttpClient();
+
+        var response = await client.GetAsync(uri.Uri);
+        var body = response.Content.ReadAsStringAsync().Result;
+        var parsed = Json.FromString<GoogleTimeZoneResponse>(body);
+        if (parsed.status != "OK")
+        {
+            throw new Exception($"Timezone lookup failed for {latitude}, {longitude}");
+        }
+        return parsed.timeZoneName;
+    }
 }
 
 internal record GoogleForwardGeocodeResponse

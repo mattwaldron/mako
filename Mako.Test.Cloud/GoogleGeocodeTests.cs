@@ -12,7 +12,7 @@ internal class GoogleGeocodeTests
     [SetUp]
     public void Setup()
     {
-        ggc = new GoogleGeocode("<api key>");
+        ggc = new GoogleGeocode("AIzaSyBItIh62R0I474t7wg7PBEvEbuahfPR2jA");
     }
 
     [Test]
@@ -30,5 +30,12 @@ internal class GoogleGeocodeTests
     {
         var offset = await ggc.CoordinatesToTimeOffset(38.5815719, -121.4943996);
         Assert.That(offset == -28800 || offset == -25200);
+    }
+
+    [Test]
+    public async Task TimeZoneName_Sacramento()
+    {
+        var timezone = await ggc.CoordinatesToTimeZoneName(38.5815719, -121.4943996);
+        Assert.That(timezone.Contains("Pacific"));
     }
 }

@@ -49,4 +49,9 @@ public static class DateAndTime
         }
         return null;
     }
+
+    public static DateTimeOffset GetTimeAtZone(TimeZoneInfo tzi, DateTimeOffset dt)
+    {
+        return dt.ToOffset(tzi.GetUtcOffset(dt));
+    }
 }

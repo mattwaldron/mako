@@ -90,4 +90,17 @@ internal class DateAndTimeTests
         Assert.That(timeChange.DayOfWeek.Equals(DayOfWeek.Sunday));
         Assert.That(timeChange.Hour.Equals(2));
     }
+
+    [Test]
+    public void CheckDaylightTransition()
+    {
+        var start = DateTimeOffset.FromUnixTimeSeconds(1730610000);
+        var timeZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+        for(var h = 0; h < 2; h++)
+        {
+            var dto = start.AddHours(h);
+            var dtadj = DateAndTime.GetTimeAtZone(timeZone, dto);
+            Assert.That(dtadj.Hour.Equals(1));
+        }
+    }
 }
