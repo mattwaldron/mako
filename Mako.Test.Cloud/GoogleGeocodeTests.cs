@@ -12,7 +12,7 @@ internal class GoogleGeocodeTests
     [SetUp]
     public void Setup()
     {
-        ggc = new GoogleGeocode("AIzaSyBItIh62R0I474t7wg7PBEvEbuahfPR2jA");
+        ggc = new GoogleGeocode("<api key>");
     }
 
     [Test]
