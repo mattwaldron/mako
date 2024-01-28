@@ -56,4 +56,10 @@
 	  <ProjectReference Include="..\Mako.Ui\Mako.Ui.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="SegmentedMeterTestPage.xaml.cs">
+	    <DependentUpon>SegmentedMeterTestPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
 </Project>
