@@ -73,6 +73,9 @@
 	  <Compile Update="ClockTestPage.xaml.cs">
 	    <DependentUpon>ClockTestPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="ContinuousMeterTestPage.xaml.cs">
+	    <DependentUpon>%(Filename)</DependentUpon>
+	  </Compile>
 	  <Compile Update="SegmentedMeterTestPage.xaml.cs">
 	    <DependentUpon>%(Filename)</DependentUpon>
 	  </Compile>
@@ -80,6 +83,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="ClockTestPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ContinuousMeterTestPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="SegmentedMeterTestPage.xaml">

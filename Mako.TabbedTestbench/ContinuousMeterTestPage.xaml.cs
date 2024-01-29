@@ -3,9 +3,9 @@ using Microsoft.Maui.Controls;
 
 namespace Mako.TabbedTestbench;
 
-public partial class SegmentedMeterTestPage : ContentPage
+public partial class ContinuousMeterTestPage : ContentPage
 {
-    public SegmentedMeterTestPage()
+    public ContinuousMeterTestPage()
     {
         InitializeComponent();
     }

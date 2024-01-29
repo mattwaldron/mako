@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mako.Testbench.SegmentedMeterTestPage"
+             x:Class="Mako.TabbedTestbench.ContinuousMeterTestPage"
              xmlns:m="clr-namespace:Mako.Ui;assembly=Mako.Ui">
 
     <Grid>
@@ -11,9 +11,9 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-        <m:SegmentedRadialMeter Grid.Row="0" x:Name="SRadialMeter" />
-        <m:SegmentedLinearMeter Grid.Row="1" x:Name="SLinearMeter" />
-        <Slider Grid.Row="2" x:Name="SValueSlider" Value="0.5" Minimum="0" Maximum="1" ValueChanged="SValueSlider_ValueChanged"/>
+        <m:ContinuousRadialMeter Grid.Row="0" x:Name="RadialMeter" />
+        <m:ContinuousLinearMeter Grid.Row="1" x:Name="LinearMeter" />
+        <Slider Grid.Row="2" x:Name="ValueSlider" Value="0.5" Minimum="0" Maximum="1" ValueChanged="ValueSlider_ValueChanged"/>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -29,10 +29,10 @@
             <Label Grid.Column="0" Grid.Row="1">Max</Label>
             <Label Grid.Column="0" Grid.Row="2">WarningFraction</Label>
             <Label Grid.Column="0" Grid.Row="3">HazardFraction</Label>
-            <Entry Grid.Column="1" Grid.Row="0" StyleId="SMinBox" TextChanged="STextBox_TextChanged" Text="0"/>
-            <Entry Grid.Column="1" Grid.Row="1" StyleId="SMaxBox" TextChanged="STextBox_TextChanged" Text="1"/>
-            <Entry Grid.Column="1" Grid.Row="2" StyleId="SWarningBox" TextChanged="STextBox_TextChanged" Text="0.6"/>
-            <Entry Grid.Column="1" Grid.Row="3" StyleId="SHazardBox" TextChanged="STextBox_TextChanged" Text="0.8"/>
+            <Entry Grid.Column="1" Grid.Row="0" StyleId="MinBox" TextChanged="TextBox_TextChanged" Text="0"/>
+            <Entry Grid.Column="1" Grid.Row="1" StyleId="MaxBox" TextChanged="TextBox_TextChanged" Text="1"/>
+            <Entry Grid.Column="1" Grid.Row="2" StyleId="WarningBox" TextChanged="TextBox_TextChanged" Text="0.6"/>
+            <Entry Grid.Column="1" Grid.Row="3" StyleId="HazardBox" TextChanged="TextBox_TextChanged" Text="0.8"/>
         </Grid>
     </Grid>
 </ContentPage>

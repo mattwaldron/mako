@@ -8,17 +8,17 @@
 
     <NavigationPage Title="Segmented">
         <x:Arguments>
-            <local:SegmentedMeterTestPage Title="TabOne" />
+            <local:SegmentedMeterTestPage Title="Segmented Meters" />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Continuous">
+        <x:Arguments>
+            <local:ContinuousMeterTestPage Title="Continuous Meters" />
         </x:Arguments>
     </NavigationPage>
     <NavigationPage Title="Clock">
         <x:Arguments>
-            <local:ClockTestPage Title="TabTwo" />
-        </x:Arguments>
-    </NavigationPage>
-    <NavigationPage Title="Three" IconImageSource="{StaticResource TabThree}">
-        <x:Arguments>
-            <local:MainPage Title="Three" />
+            <local:ClockTestPage Title="Clock" />
         </x:Arguments>
     </NavigationPage>
     <NavigationPage Title="Four" IconImageSource="{StaticResource TabFour}">
