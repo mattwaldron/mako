@@ -5,17 +5,15 @@ VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mako.Ui", "Mako.Ui\Mako.Ui.csproj", "{6EC097C5-EA9E-4564-8814-82181B59CBB4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mako.Testbench", "Mako.Testbench\Mako.Testbench.csproj", "{3C1DC542-14DF-4187-B813-087190C4BACB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mako.Cloud", "Mako.Cloud\Mako.Cloud.csproj", "{1068A874-4F53-4B89-8CB7-14B575901F1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mako.Cloud", "Mako.Cloud\Mako.Cloud.csproj", "{1068A874-4F53-4B89-8CB7-14B575901F1C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4AB9ABD2-19C2-42DB-AADA-7861E90D2100}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mako.Test.Cloud", "Mako.Test.Cloud\Mako.Test.Cloud.csproj", "{E3B0884A-4D76-4F34-8EF2-B895E6588EE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mako.Test.Cloud", "Mako.Test.Cloud\Mako.Test.Cloud.csproj", "{E3B0884A-4D76-4F34-8EF2-B895E6588EE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mako.Common", "Mako.Common\Mako.Common.csproj", "{FDC5E6CD-78B5-4F97-8F66-322CBE0D1E67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mako.Common", "Mako.Common\Mako.Common.csproj", "{FDC5E6CD-78B5-4F97-8F66-322CBE0D1E67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mako.Test.Common", "Mako.Test.Common\Mako.Test.Common.csproj", "{DA02084C-D408-4AD9-ADF9-0A95A8775774}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mako.Test.Common", "Mako.Test.Common\Mako.Test.Common.csproj", "{DA02084C-D408-4AD9-ADF9-0A95A8775774}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mako.TabbedTestbench", "Mako.TabbedTestbench\Mako.TabbedTestbench.csproj", "{47EF204B-4101-453F-94E2-ADFD429EEB5F}"
 EndProject
@@ -29,12 +27,6 @@ Global
 		{6EC097C5-EA9E-4564-8814-82181B59CBB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EC097C5-EA9E-4564-8814-82181B59CBB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EC097C5-EA9E-4564-8814-82181B59CBB4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C1DC542-14DF-4187-B813-087190C4BACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C1DC542-14DF-4187-B813-087190C4BACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C1DC542-14DF-4187-B813-087190C4BACB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{3C1DC542-14DF-4187-B813-087190C4BACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C1DC542-14DF-4187-B813-087190C4BACB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C1DC542-14DF-4187-B813-087190C4BACB}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{1068A874-4F53-4B89-8CB7-14B575901F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1068A874-4F53-4B89-8CB7-14B575901F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1068A874-4F53-4B89-8CB7-14B575901F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
