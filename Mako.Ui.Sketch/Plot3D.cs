@@ -42,13 +42,20 @@ public static class Plot3D
         return plot;
     }
 
-    public static ModelVisual3D Rotate(this ModelVisual3D model, double theta, double psi)
+    private static Vector3D rollAxis = new Vector3D(1, 0, 0);
+    private static Vector3D pitchAxis = new Vector3D(0, 1, 0);
+    private static Vector3D yawAxis = new Vector3D(0, 0, 1);
+
+    public static ModelVisual3D Rotate(this ModelVisual3D model, double pitch, double yaw, double roll)
     {
-        model.Transform = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), theta));
-        /*mesh.Transform = Transform3DHelper.CombineTransform(
-                new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), theta)),
-                new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 0, 1), psi))
-            );*/
+        var pitchRot = new RotateTransform3D(new AxisAngleRotation3D(pitchAxis, pitch));
+        var yawRot = new RotateTransform3D(new AxisAngleRotation3D(yawAxis, yaw));
+        var rollRot = new RotateTransform3D(new AxisAngleRotation3D(rollAxis, roll));
+        
+        model.Transform = Transform3DHelper.CombineTransform(
+            Transform3DHelper.CombineTransform(
+                rollRot, yawRot),
+                pitchRot);
         return model;
     }
 

@@ -7,8 +7,9 @@ using System.Windows.Media.Media3D;
 
 Sketch.Create(win =>
 {
-    double theta = 0;
-    double psi = 0;
+    double roll = 0;
+    double pitch = 0;
+    double yaw = 0;
 
 /* win.ControlPanel.AddButton("Sin", () =>
 {
@@ -20,51 +21,48 @@ Sketch.Create(win =>
     win.Log(Plot.Create().AddLine(sine));
 });*/
 
-    var thetaRot = new AxisAngleRotation3D(new Vector3D(0, 0, 1), theta);
-    var psiRot = new AxisAngleRotation3D(new Vector3D(0, 1, 0), psi);
-    var combinedRot = Transform3DHelper.CombineTransform(new RotateTransform3D(psiRot), new RotateTransform3D(thetaRot));
-    // var rotation = new AxisAngleRotation3D(new Vector3D(0, 0, 1), theta);
-    // var rot3D = new RotateTransform3D(rotation);
-    var teapot = new CubeVisual3D()
-    {
-        Transform = combinedRot
-    };
+    var teapot = new CubeVisual3D();
 
     var view = Plot3D.Create().AddObject(teapot);
+    view.ZoomExtents();
 
     void Update()
     {
-        thetaRot.Angle = theta;
-        psiRot.Angle = psi;
-        var combinedRot = Transform3DHelper.CombineTransform(new RotateTransform3D(psiRot), new RotateTransform3D(thetaRot));
-        // rotation = new AxisAngleRotation3D(new Vector3D(0, 0, 1), theta);
-        // rot3D = new RotateTransform3D(rotation);
-        // rotation.Angle = theta;
-        teapot.Transform = combinedRot;
+        teapot.Rotate(pitch, yaw, roll);
     }
 
-    win.ControlPanel.AddButton("Theta+", () =>
+    win.ControlPanel.AddButton("Roll+", () =>
     {
-        theta += 5;
+        roll += 5;
         Update();
     });
-    win.ControlPanel.AddButton("Theta-", () =>
+    win.ControlPanel.AddButton("Roll-", () =>
     {
-        theta -= 5;
+        roll -= 5;
         Update();
     });
-    win.ControlPanel.AddButton("Psi+", () =>
+    win.ControlPanel.AddButton("Yaw+", () =>
     {
-        psi += 5;
+        yaw += 5;
         Update();
     });
-    win.ControlPanel.AddButton("Psi-", () =>
+    win.ControlPanel.AddButton("Yaw-", () =>
     {
-        psi -= 5;
+        yaw -= 5;
+        Update();
+    });
+    win.ControlPanel.AddButton("Pitch+", () =>
+    {
+        pitch += 5;
+        Update();
+    });
+    win.ControlPanel.AddButton("Pitch-", () =>
+    {
+        pitch -= 5;
         Update();
     });
 
-    
+
     view.Height = 400;
     win.Log(view);
 });
