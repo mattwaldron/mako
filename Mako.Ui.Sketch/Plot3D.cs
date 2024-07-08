@@ -7,7 +7,7 @@ using System.Windows.Media.Media3D;
 
 namespace Mako.Ui.Sketch;
 
-public class Point3D
+/*public class Point3D
 {
     public double X { get; set; }
     public double Y { get; set; }
@@ -18,7 +18,7 @@ public class Point3D
         Y = y;
         Z = z;
     }
-}
+}*/
 
 public static class Plot3D
 {
@@ -29,25 +29,27 @@ public static class Plot3D
         return view;
     }
 
-    public static HelixViewport3D AddMesh(this HelixViewport3D plot, MeshElement3D mesh, Color? color = null)
+    public static HelixViewport3D AddObject(this HelixViewport3D plot, Visual3D obj)
     {
-        if (color != null)
+        /*if (color != null)
         {
             mesh.Material = MaterialHelper.CreateMaterial(color.Value);
-        }
+        }*/
+        obj.Transform = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), 0));
 
-        plot.Children.Add(mesh);
+        plot.Children.Add(obj);
+        // plot.ZoomExtents();
         return plot;
     }
 
-    public static MeshElement3D Rotate(this MeshElement3D mesh, double theta, double psi)
+    public static ModelVisual3D Rotate(this ModelVisual3D model, double theta, double psi)
     {
-        mesh.Content.Transform = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), theta));
+        model.Transform = new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), theta));
         /*mesh.Transform = Transform3DHelper.CombineTransform(
                 new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 1, 0), theta)),
                 new RotateTransform3D(new AxisAngleRotation3D(new Vector3D(0, 0, 1), psi))
             );*/
-        return mesh;
+        return model;
     }
 
 }
