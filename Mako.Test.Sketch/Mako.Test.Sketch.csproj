@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mako.IO\Mako.IO.csproj" />
     <ProjectReference Include="..\Mako.Ui.Sketch\Mako.Ui.Sketch.csproj" />
     <ProjectReference Include="..\Mako.Ui\Mako.Ui.csproj" />
   </ItemGroup>

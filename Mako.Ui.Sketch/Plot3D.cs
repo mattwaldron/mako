@@ -46,17 +46,42 @@ public static class Plot3D
     private static Vector3D pitchAxis = new Vector3D(0, 1, 0);
     private static Vector3D yawAxis = new Vector3D(0, 0, 1);
 
-    public static ModelVisual3D Rotate(this ModelVisual3D model, double pitch, double yaw, double roll)
+    public static ModelVisual3D Rotate(this ModelVisual3D model, double yaw, double pitch, double roll)
     {
         var pitchRot = new RotateTransform3D(new AxisAngleRotation3D(pitchAxis, pitch));
         var yawRot = new RotateTransform3D(new AxisAngleRotation3D(yawAxis, yaw));
         var rollRot = new RotateTransform3D(new AxisAngleRotation3D(rollAxis, roll));
         
         model.Transform = Transform3DHelper.CombineTransform(
+            rollRot, 
             Transform3DHelper.CombineTransform(
-                rollRot, yawRot),
-                pitchRot);
+                pitchRot,
+                yawRot));
         return model;
     }
+
+    private static Vector3D tiltFromDefault = new Vector3D(0, 0, 1);
+
+    public static ModelVisual3D Tilt(this ModelVisual3D model, Vector3D toward)
+    {
+        return model.Tilt(toward, tiltFromDefault);
+    }
+
+    public static ModelVisual3D Tilt(this ModelVisual3D model, Vector3D toward, Vector3D from)
+    {
+        var rotationAxis = new Vector3D(toward.Y * from.Z - toward.Z * from.Y,
+                                        toward.Z * from.X - toward.X * from.Z,
+                                        toward.X * from.Y - toward.Y * from.X);
+
+        var angle = Math.Asin(rotationAxis.Length / (toward.Length * from.Length));
+        angle = angle * 180 / Math.PI;
+        if ((toward.X * from.X + toward.Y*from.Y + toward.Z*from.Z) < 0)
+        {
+            angle = 180 - angle;
+        }
+        model.Transform = new RotateTransform3D(new AxisAngleRotation3D(rotationAxis, angle));
+        return model;
+    }
+
 
 }
